@@ -1,0 +1,18 @@
+# Ambiente
+.env
+.env.local
+.env.*
+!.env.example
+
+# Dependências
+node_modules/
+vendor/
+
+# Sistema
+.DS_Store
+.idea/
+.vscode/
+
+dados_sanitizados
+vectordb/
+chroma/

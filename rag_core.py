@@ -171,7 +171,8 @@ def answer_question(question: str) -> Tuple[str, List[Dict]]:
                 "titulo": meta.get("titulo") or meta.get("title") or meta.get("id") or "Documento",
                 "id": meta.get("id") or meta.get("source") or meta.get("file") or "N/A",
                 "origem": ch["origem"],
-                "score": ch["score"]
+                "score": ch["score"],
+                "text": ch["content"]
             })
 
         return response, fontes
