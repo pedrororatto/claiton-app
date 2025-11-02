@@ -8,17 +8,15 @@ from twilio.twiml.messaging_response import MessagingResponse
 from twilio.rest import Client
 from rag_core import answer_question
 from threading import Thread
-
+from dotenv import load_dotenv
+load_dotenv()
 app = Flask(__name__)
 
 # Credenciais Twilio (via .env)
 TWILIO_ACCOUNT_SID = os.getenv("TWILIO_ACCOUNT_SID")
 TWILIO_AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN")
 TWILIO_WHATSAPP_NUMBER = os.getenv("TWILIO_WHATSAPP_NUMBER")
-
 client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
-
-
 @app.route("/webhook", methods=["POST"])
 @app.route("/webhook", methods=["POST"])
 def webhook():
@@ -37,7 +35,6 @@ def webhook():
 
     # Processar em background e enviar depois
     Thread(target=process_and_send, args=(incoming_msg, from_number)).start()
-
     return str(response)
 
 
@@ -46,7 +43,6 @@ def process_and_send(question, to_number):
     try:
         print(f"[BACKGROUND] Processando: {question}")
         resposta, fontes = answer_question(question)
-
         # Formatar mensagem
         mensagem = f"📋 *Resposta:*\n{resposta}\n\n"
         if fontes:
@@ -58,12 +54,13 @@ def process_and_send(question, to_number):
 
         # Enviar via Twilio API
         client = Client(os.getenv("TWILIO_ACCOUNT_SID"), os.getenv("TWILIO_AUTH_TOKEN"))
-
+        print("meu cliente: ", client)
         message = client.messages.create(
             from_=TWILIO_WHATSAPP_NUMBER,
             body=mensagem,
             to=to_number
         )
+        print("mensagem enviada: ", message)
 
         print(f"[ENVIADO] SID: {message.sid}")
 

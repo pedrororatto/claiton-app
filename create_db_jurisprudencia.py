@@ -1,13 +1,16 @@
 import json
+import os
 from pathlib import Path
 from typing import List, Dict, Any, Iterable
+from dotenv import load_dotenv
 
 # Use o pacote novo do Chroma para LangChain
 from langchain_chroma import Chroma
 from langchain.docstore.document import Document
 from langchain_huggingface import HuggingFaceEmbeddings
-
-EMBEDDING_MODEL_NAME = "intfloat/multilingual-e5-base"
+load_dotenv()
+EMBEDDING_MODEL_NAME = (os.getenv("EMBED_MODEL_NAME"))
+print(EMBEDDING_MODEL_NAME)
 # Instância global, forçando CPU
 embeddings = HuggingFaceEmbeddings(
     model_name=EMBEDDING_MODEL_NAME,

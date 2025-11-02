@@ -3,22 +3,23 @@ import sys
 import json
 import requests
 from typing import List, Dict, Tuple
-
+from dotenv import load_dotenv
+load_dotenv()
 # CONFIGS
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434")
-OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3.1:8b-instruct-q8_0")
-TEMPERATURE = float(os.getenv("OLLAMA_TEMPERATURE", "0.2"))
-NUM_CTX = int(os.getenv("OLLAMA_NUM_CTX", "4096"))
-TOP_P = float(os.getenv("OLLAMA_TOP_P", "0.9"))
-K_JURIS = int(os.getenv("K_JURIS", "3"))
-K_LEI = int(os.getenv("K_LEI", "3"))
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL")
+TEMPERATURE = float(os.getenv("OLLAMA_TEMPERATURE"))
+NUM_CTX = int(os.getenv("OLLAMA_NUM_CTX"))
+TOP_P = float(os.getenv("OLLAMA_TOP_P"))
+K_JURIS = int(os.getenv("K_JURIS"))
+K_LEI = int(os.getenv("K_LEI"))
 
 # Imports corrigidos (LangChain v0.2+)
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 
 # Use o MESMO modelo de embeddings da indexação
-EMBED_MODEL_NAME = os.getenv("EMBED_MODEL_NAME", "intfloat/multilingual-e5-base")
+EMBED_MODEL_NAME = os.getenv("EMBED_MODEL_NAME")
 # Forçar CPU para contornar incompatibilidade CUDA sm_61
 EMBEDDINGS = HuggingFaceEmbeddings(
     model_name=EMBED_MODEL_NAME,
@@ -29,17 +30,21 @@ CHROMA_PATH = os.getenv("CHROMA_PATH", "./vectordb/chroma")
 JURIS_COLLECTION = "jurisprudencia_br_v1"
 LEI_COLLECTION = "legislacao_codigo_penal"
 
-SYSTEM_INSTRUCTIONS = """Você é um assistente jurídico em português do Brasil.
-Regras:
-- Responda de forma objetiva e juridicamente precisa.
-- Quando houver "Contextos" (trechos recuperados), baseie a resposta estritamente neles.
-- Cite as fontes no final como [Fonte N - id/título].
-- Se os contextos forem insuficientes, diga isso explicitamente e peça mais detalhes.
-- Não invente artigos, números de processos, nem jurisprudências.
-- Formato: resposta curta (3-7 frases). Se a pergunta exigir, acrescente bullets.
+SYSTEM_INSTRUCTIONS = """
+Você é um assistente jurídico especializado em Direito Penal brasileiro.
+
+### Diretrizes:
+- Responda **somente com base nas leis e jurisprudências brasileiras**.
+- Não invente artigos, números de processos ou jurisprudências.
+- Se os "Contextos Recuperados" não forem suficientes, diga isso claramente.
+- Destaque a **natureza jurídica** do fato (crime, contravenção, infração administrativa) e os **entendimentos predominantes**.
+- Evite discutir doutrina ou princípios gerais, **a menos que apareçam nos contextos**.
+- Responda de forma técnica, objetiva e impessoal (3 a 6 frases).
+- Sempre cite as fontes no formato: [Fonte N – {source_meta}].
 """
 
-PROMPT_TEMPLATE = """[SISTEMA]
+PROMPT_TEMPLATE = """
+[SISTEMA]
 {system_instructions}
 
 [PERGUNTA DO USUÁRIO]
@@ -49,9 +54,9 @@ PROMPT_TEMPLATE = """[SISTEMA]
 {contexts}
 
 [INSTRUÇÕES DE SAÍDA]
-- Responda em PT-BR.
-- Seja conciso e preciso.
-- Inclua citações de fontes no final, no formato [Fonte N - {{source_meta}}].
+- Responda em português do Brasil.
+- Seja conciso, técnico e juridicamente preciso.
+- Cite as fontes no final no formato [Fonte N – {{source_meta}}].
 """
 
 def load_vectorstores():

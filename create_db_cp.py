@@ -1,7 +1,10 @@
 import json
+import os
 import chromadb
 from pathlib import Path
 from sentence_transformers import SentenceTransformer
+from dotenv import load_dotenv
+load_dotenv()
 
 # Configurações
 CODIGO_PENAL_JSON = Path("dados_sanitizados/codigo_penal/codigo_penal_estruturado.json")
@@ -52,7 +55,7 @@ def indexar_codigo_penal():
 
     # PADRONIZAÇÃO: mesmo modelo da jurisprudência, em CPU
     print("🤖 Carregando modelo de embeddings (CPU)...")
-    model = SentenceTransformer("intfloat/multilingual-e5-base", device="cpu")
+    model = SentenceTransformer(os.getenv("EMBED_MODEL_NAME"), device="cpu")
 
     documentos = []
     metadados = []
@@ -100,7 +103,7 @@ def testar_busca():
     client = chromadb.PersistentClient(path=str(CHROMA_DB_DIR))
     collection = client.get_or_create_collection(name="legislacao_codigo_penal")
 
-    model = SentenceTransformer("intfloat/multilingual-e5-base", device="cpu")
+    model = SentenceTransformer(os.getenv("EMBED_MODEL_NAME"), device="cpu")
 
     query1 = "Qual a pena para homicídio qualificado?"
     print(f"\n📝 Query: {query1}")
