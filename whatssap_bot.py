@@ -17,7 +17,7 @@ TWILIO_ACCOUNT_SID = os.getenv("TWILIO_ACCOUNT_SID")
 TWILIO_AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN")
 TWILIO_WHATSAPP_NUMBER = os.getenv("TWILIO_WHATSAPP_NUMBER")
 client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
-@app.route("/webhook", methods=["POST"])
+
 @app.route("/webhook", methods=["POST"])
 def webhook():
     incoming_msg = request.values.get("Body", "").strip()
@@ -42,7 +42,9 @@ def process_and_send(question, to_number):
     """Processa RAG e envia resposta via Twilio API"""
     try:
         print(f"[BACKGROUND] Processando: {question}")
-        resposta, fontes = answer_question(question)
+        # Limitar resposta a 1200 chars para deixar espaço para header e fontes (total max 1600)
+        resposta, fontes = answer_question(question, max_response_length=1200)
+        
         # Formatar mensagem
         mensagem = f"📋 *Resposta:*\n{resposta}\n\n"
         if fontes:
@@ -51,6 +53,13 @@ def process_and_send(question, to_number):
                 titulo = fonte.get("titulo", "N/A")
                 origem = fonte.get("origem", "N/A")
                 mensagem += f"{i}. {titulo} ({origem})\n"
+
+        # Garantir que não exceda 1600 caracteres (limite do Twilio)
+        if len(mensagem) > 1600:
+            # Truncar mensagem completa se necessário
+            mensagem = mensagem[:1597] + "..."
+
+        print(f"[DEBUG] Tamanho da mensagem: {len(mensagem)} caracteres")
 
         # Enviar via Twilio API
         client = Client(os.getenv("TWILIO_ACCOUNT_SID"), os.getenv("TWILIO_AUTH_TOKEN"))

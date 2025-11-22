@@ -1,0 +1,138 @@
+id_pergunta,pergunta,embedding_model,llm_name,llm_model,resposta_gerada,resposta_esperada,artigos_retrieved,artigos_relevantes,juris_retrieved,juris_relevantes,precision_lei,recall_lei,f1_lei,precision_juris,recall_juris,f1_juris,generation_time,num_docs_retrieved,num_docs_used
+1,"Um motorista atropela um pedestre ao dirigir embriagado, causando sua morte. Como a embriaguez influencia na tipificação do crime?",intfloat/multilingual-e5-small,llama3_3b_q8,llama3:3b-instruct-q8_0,[ERRO] 404 Client Error: Not Found for url: http://localhost:11434/api/generate,"A embriaguez voluntária não exclui a imputabilidade penal (art. 28, II). Se houver dolo eventual (assumir o risco), pode ser homicídio doloso. Se houver negligência, será homicídio culposo qualificado pela embriaguez. A jurisprudência tem reconhecido dolo eventual em casos de embriaguez ao volante com resultado morte.",157;Art. 306 do CTB (Lei 9.503/1997),121;28;306,,,0.0,0.0,0.0,1.0,1.0,1.0,0.009950637817382812,5,3
+2,Uma pessoa aplica golpe pela internet vendendo produtos inexistentes. Qual a diferença entre estelionato simples e qualificado neste caso?,intfloat/multilingual-e5-small,llama3_3b_q8,llama3:3b-instruct-q8_0,[ERRO] 404 Client Error: Not Found for url: http://localhost:11434/api/generate,"Estelionato está previsto no art. 171 (reclusão de 1 a 5 anos). Será qualificado se cometido contra idoso ou vulnerável (§3º), com pena aumentada de 1/3 a 2/3. O meio eletrônico não qualifica automaticamente, mas pode ser considerado na dosimetria da pena.",171;Lei 11.343/2006 - Art. 33,171,,,0.5,1.0,0.6666666666666666,1.0,1.0,1.0,0.0021696090698242188,5,1
+3,"Em uma briga, A agride B causando lesões leves, mas B morre dias depois por complicações. Como diferenciar lesão corporal seguida de morte e homicídio?",intfloat/multilingual-e5-small,llama3_3b_q8,llama3:3b-instruct-q8_0,[ERRO] 404 Client Error: Not Found for url: http://localhost:11434/api/generate,"Na lesão corporal seguida de morte (art. 129, §3º), o agente não quer nem assume o risco da morte - ela decorre de caso fortuito. No homicídio, há dolo (direto ou eventual). A distinção está na intenção: se quis apenas lesionar, é art. 129 §3º; se assumiu o risco da morte, é homicídio doloso (art. 121).",121;129,121;129,,,1.0,1.0,1.0,1.0,1.0,1.0,0.0019049644470214844,5,3
+4,"Policiais encontram drogas na casa de João, mas ele alega que apenas guardava para um amigo traficante. Quando caracteriza tráfico e quando caracteriza porte para consumo?",intfloat/multilingual-e5-small,llama3_3b_q8,llama3:3b-instruct-q8_0,[ERRO] 404 Client Error: Not Found for url: http://localhost:11434/api/generate,"Porte para consumo (art. 28) exige que a droga seja para uso pessoal, considerando natureza, quantidade, local e condições da apreensão. Tráfico (art. 33) inclui guardar ou ter em depósito para terceiros. Guardar droga de traficante, mesmo sem vender, configura tráfico. A jurisprudência analisa o caso concreto, mas a quantidade e finalidade são determinantes.",180;Lei 11.343/2006 - Art. 28,28;33,,,0.0,0.0,0.0,1.0,1.0,1.0,0.0027527809143066406,5,2
+5,"Maria compra um celular muito barato de um desconhecido na rua, desconfiando que seja roubado. Ela pode responder por receptação mesmo sem certeza da origem ilícita?",intfloat/multilingual-e5-small,llama3_3b_q8,llama3:3b-instruct-q8_0,[ERRO] 404 Client Error: Not Found for url: http://localhost:11434/api/generate,"Sim. A receptação pode ser dolosa (art. 180 caput - certeza) ou culposa (art. 180 §3º - deveria saber). Comprar produto muito abaixo do preço, de vendedor suspeito, configura receptação culposa. A jurisprudência considera as circunstâncias: preço, local, ausência de nota fiscal. A pena da receptação culposa é menor (detenção de 1 mês a 1 ano).",180;Lei 11.343/2006 - Art. 33,180,,,0.5,1.0,0.6666666666666666,1.0,1.0,1.0,0.0015573501586914062,5,1
+6,Dois assaltantes rendem vítima com arma de brinquedo. O roubo é qualificado mesmo com arma falsa?,intfloat/multilingual-e5-small,llama3_3b_q8,llama3:3b-instruct-q8_0,[ERRO] 404 Client Error: Not Found for url: http://localhost:11434/api/generate,"Sim. A jurisprudência pacificou que o emprego de arma de brinquedo ou simulacro configura roubo qualificado (art. 157, §2º, I), pois a vítima acredita na ameaça real. O STJ entende que o que importa é a potencialidade lesiva aparente e a intimidação efetiva. Súmula 174 do STJ: arma desmuniciada também qualifica.",157;Art. 306 do CTB (Lei 9.503/1997),157,,,0.5,1.0,0.6666666666666666,1.0,1.0,1.0,0.001565694808959961,5,1
+7,"Pedro furta uma barra de chocolate de R$ 3,00 de um supermercado. Pode ser aplicado o princípio da insignificância?",intfloat/multilingual-e5-small,llama3_3b_q8,llama3:3b-instruct-q8_0,[ERRO] 404 Client Error: Not Found for url: http://localhost:11434/api/generate,"Possivelmente sim. O princípio da insignificância exclui a tipicidade material quando há: (1) mínima ofensividade da conduta, (2) ausência de periculosidade social, (3) reduzido grau de reprovabilidade, (4) inexpressividade da lesão. Furto de R$ 3,00, sem violência, de grande empresa, tende a ser considerado insignificante. Mas reincidência ou outras circunstâncias podem afastar o princípio.",155;171,155,,,0.5,1.0,0.6666666666666666,1.0,1.0,1.0,0.0015463829040527344,5,1
+8,Qual a diferença prática entre homicídio qualificado privilegiado e homicídio simples na dosimetria da pena?,intfloat/multilingual-e5-small,llama3_3b_q8,llama3:3b-instruct-q8_0,[ERRO] 404 Client Error: Not Found for url: http://localhost:11434/api/generate,"Homicídio simples: reclusão de 6 a 20 anos (art. 121 caput). Privilegiado: redução de 1/6 a 1/3 (§1º - motivo relevante valor moral/social ou domínio de violenta emoção). Qualificado: reclusão de 12 a 30 anos (§2º). Quando há privilégio e qualificadora, prevalece a qualificadora, mas o privilégio reduz a pena. Resultado: pena entre 8 e 20 anos (12 a 30 reduzida de 1/6 a 1/3).",121;129,121,,,0.5,1.0,0.6666666666666666,1.0,1.0,1.0,0.0015146732330322266,5,1
+9,Um traficante é preso com 50kg de cocaína. Quais são as causas de aumento de pena aplicáveis ao tráfico de drogas?,intfloat/multilingual-e5-small,llama3_3b_q8,llama3:3b-instruct-q8_0,[ERRO] 404 Client Error: Not Found for url: http://localhost:11434/api/generate,"Art. 40 da Lei 11.343/06 prevê aumento de 1/6 a 2/3 se: (I) tráfico transnacional ou interestadual; (II) envolver criança/adolescente; (III) financiado por organização criminosa; (IV) em transporte público, estabelecimento prisional, ensino ou saúde; (V) grande quantidade (caso dos 50kg). Podem ser cumuladas. A quantidade de 50kg certamente enseja aumento pelo inciso V.",155;Lei 11.343/2006 - Art. 33,33,,,0.0,0.0,0.0,1.0,1.0,1.0,0.0016171932220458984,5,1
+1,"Um motorista atropela um pedestre ao dirigir embriagado, causando sua morte. Como a embriaguez influencia na tipificação do crime?",intfloat/multilingual-e5-small,llama3_8b_q6,llama3:8b-instruct-q6_K,"**Explicação de termos jurídicos difíceis**
+
+Em direito penal, a embriaguez ao volante é considerada um crime previsto no Código de Trânsito Brasileiro (Lei 9.503/1997). A Lei define como ""embriaguez ao volante"" a conduta de conduzir veículo automotor com capacidade psicomotora alterada em razão da influência de álcool ou de outra substância psicoativa.
+
+**Resposta jurídica objetiva e fundamentada**
+
+A embriaguez ao volante não influencia na tipificação do crime, pois é um delito previsto no Código de Trânsito Brasileiro (Lei 9.503/1997) e não no Código Penal. O crime é considerado de perigo abstrato, ou seja, a conduta embriagada configura o delito independentemente da demonstração de potencialidade lesiva.
+
+A jurisprudência do Superior Tribunal de Justiça (STJ) também entende que a embriaguez ao volante é um crime de perigo abstrato e não depende da comprovação da diminuição da capacidade psicomotora para caracterização do delito (Acórdão nº 2015/0060885-3, T5 - QUINTA TURMA).
+
+**Fontes citadas**
+
+[Fonte 1 – Art. 306 do CTB (Lei 9.503/1997)]
+
+[Fonte 2 – Acórdão nº 2015/0060885-3 de T5 - QUINTA TURMA]
+
+[Fonte 3 – Acórdão nº 2015/0097158-9 de T6 - SEXTA TURMA]","A embriaguez voluntária não exclui a imputabilidade penal (art. 28, II). Se houver dolo eventual (assumir o risco), pode ser homicídio doloso. Se houver negligência, será homicídio culposo qualificado pela embriaguez. A jurisprudência tem reconhecido dolo eventual em casos de embriaguez ao volante com resultado morte.",157;Art. 306 do CTB (Lei 9.503/1997),121;28;306,,,0.0,0.0,0.0,1.0,1.0,1.0,44.69693183898926,5,3
+2,Uma pessoa aplica golpe pela internet vendendo produtos inexistentes. Qual a diferença entre estelionato simples e qualificado neste caso?,intfloat/multilingual-e5-small,llama3_8b_q6,llama3:8b-instruct-q6_K,"**Explicação simples de termos jurídicos difíceis:**
+
+* Estelionato: é um crime que consiste em obter vantagem ilícita, em prejuízo alheio, induzindo ou mantendo alguém em erro, mediante artifício, ardil ou qualquer outro meio fraudulento.
+* Qualificado: é quando o crime é cometido com circunstâncias específicas que aumentam a pena.
+
+**Resposta jurídica objetiva e fundamentada:**
+
+Nesse caso, a pessoa que aplica golpe pela internet vendendo produtos inexistentes pratica estelionato simples. Isso porque não há evidência de que tenha cometido qualquer das condutas qualificadas previstas no artigo 171, §2º do Código Penal Brasileiro, como vender coisa alheia como própria, defraudar garantia pignoratícia ou emitir cheque sem suficiente provisão de fundos.
+
+**Fontes:**
+
+[Fonte 1 – Art. 171 do Código Penal Brasileiro]","Estelionato está previsto no art. 171 (reclusão de 1 a 5 anos). Será qualificado se cometido contra idoso ou vulnerável (§3º), com pena aumentada de 1/3 a 2/3. O meio eletrônico não qualifica automaticamente, mas pode ser considerado na dosimetria da pena.",171;Lei 11.343/2006 - Art. 33,171,,,0.5,1.0,0.6666666666666666,1.0,1.0,1.0,18.995086431503296,5,1
+3,"Em uma briga, A agride B causando lesões leves, mas B morre dias depois por complicações. Como diferenciar lesão corporal seguida de morte e homicídio?",intfloat/multilingual-e5-small,llama3_8b_q6,llama3:8b-instruct-q6_K,"**Explicação simples de termos jurídicos difíceis**
+
+Lesão corporal: é o crime de ofender a integridade corporal ou a saúde de outrem, previsto no artigo 129 do Código Penal Brasileiro.
+
+Homicídio: é o crime de matar alguém, previsto no artigo 121 do Código Penal Brasileiro.
+
+**Resposta jurídica objetiva e fundamentada**
+
+Em uma briga, A agride B causando lesões leves, mas B morre dias depois por complicações. Para diferenciar lesão corporal seguida de morte e homicídio, é necessário analisar as circunstâncias do caso.
+
+Se a lesão foi causada com intenção de matar ou com o conhecimento da possibilidade de morte, pode ser considerado homicídio (art. 121, § 3º do Código Penal Brasileiro). No entanto, se a lesão foi causada sem a intenção de matar e não houve culpa na morte da vítima, pode ser considerada lesão corporal seguida de morte (art. 129, § 3º do Código Penal Brasileiro).
+
+**Fontes citadas**
+
+[Fonte 1 – Artigo 129 do Código Penal Brasileiro]
+
+[Fonte 2 – Acórdão nº 2015/0320983-9 da Sexta Turma do Superior Tribunal de Justiça]
+
+[Fonte 3 – Acórdão nº 2016/0236855-0 da Sexta Turma do Superior Tribunal de Justiça]","Na lesão corporal seguida de morte (art. 129, §3º), o agente não quer nem assume o risco da morte - ela decorre de caso fortuito. No homicídio, há dolo (direto ou eventual). A distinção está na intenção: se quis apenas lesionar, é art. 129 §3º; se assumiu o risco da morte, é homicídio doloso (art. 121).",121;129,121;129,,,1.0,1.0,1.0,1.0,1.0,1.0,31.702383756637573,5,3
+4,"Policiais encontram drogas na casa de João, mas ele alega que apenas guardava para um amigo traficante. Quando caracteriza tráfico e quando caracteriza porte para consumo?",intfloat/multilingual-e5-small,llama3_8b_q6,llama3:8b-instruct-q6_K,"**Explicação simples de termos jurídicos difíceis**
+
+* ""Porte"" refere-se à ação de transportar ou ter em posse uma substância ilícita, como drogas.
+* ""Traficante"" é alguém que comete o crime de tráfico de drogas, que consiste em produzir, distribuir, vender ou fornecer drogas sem autorização legal.
+
+**Resposta jurídica objetiva e fundamentada**
+
+A conduta de João, que alega ter guardado drogas para um amigo traficante, pode ser caracterizada como porte de drogas para consumo pessoal (Art. 28 da Lei 11.343/2006) ou receptação (Art. 180 do Código Penal).
+
+Se João tiver apenas uma pequena quantidade de droga e não houver indícios de que a substância seja destinada à venda ou distribuição, é mais provável que a conduta seja caracterizada como porte para consumo pessoal. Nesse caso, João estaria sujeito às medidas educativas previstas na Lei 11.343/2006.
+
+No entanto, se houver indícios de que a droga seja destinada à venda ou distribuição, ou se João tiver uma quantidade significativa de drogas, é mais provável que a conduta seja caracterizada como receptação. Nesse caso, João estaria sujeito às penas previstas no Código Penal.
+
+**Fontes**
+
+[Fonte 1 – Lei 11.343/2006 - Art. 28]
+[Fonte 2 – Código Penal Brasileiro - Art. 180]","Porte para consumo (art. 28) exige que a droga seja para uso pessoal, considerando natureza, quantidade, local e condições da apreensão. Tráfico (art. 33) inclui guardar ou ter em depósito para terceiros. Guardar droga de traficante, mesmo sem vender, configura tráfico. A jurisprudência analisa o caso concreto, mas a quantidade e finalidade são determinantes.",180;Lei 11.343/2006 - Art. 28,28;33,,,0.0,0.0,0.0,1.0,1.0,1.0,31.19454264640808,5,2
+5,"Maria compra um celular muito barato de um desconhecido na rua, desconfiando que seja roubado. Ela pode responder por receptação mesmo sem certeza da origem ilícita?",intfloat/multilingual-e5-small,llama3_8b_q6,llama3:8b-instruct-q6_K,"**Explicação simples de termos jurídicos difíceis:**
+Receptação é um crime que ocorre quando alguém adquire, recebe, transporta ou oculta uma coisa sabendo que ela é produto de um crime. Em outras palavras, se você compra algo que sabe ser roubado, está cometendo receptação.
+
+**Resposta jurídica objetiva e fundamentada:**
+Sim, Maria pode responder por receptação mesmo sem certeza da origem ilícita. Isso porque o artigo 180 do Código Penal brasileiro estabelece que a receptação é punível quando se adquire ou recebe coisa que ""deve saber ser produto de crime"" (§3º). Nesse sentido, Maria, ao comprar o celular muito barato de um desconhecido na rua, deve presumir que ele seja produto de um crime, pois o preço é desproporcionado em relação ao valor do produto. Portanto, sua conduta configura receptação dolosa.
+
+**Fonte:**
+[Fonte 1 – Artigo 180 do Código Penal brasileiro]","Sim. A receptação pode ser dolosa (art. 180 caput - certeza) ou culposa (art. 180 §3º - deveria saber). Comprar produto muito abaixo do preço, de vendedor suspeito, configura receptação culposa. A jurisprudência considera as circunstâncias: preço, local, ausência de nota fiscal. A pena da receptação culposa é menor (detenção de 1 mês a 1 ano).",180;Lei 11.343/2006 - Art. 33,180,,,0.5,1.0,0.6666666666666666,1.0,1.0,1.0,20.747329473495483,5,1
+6,Dois assaltantes rendem vítima com arma de brinquedo. O roubo é qualificado mesmo com arma falsa?,intfloat/multilingual-e5-small,llama3_8b_q6,llama3:8b-instruct-q6_K,"**Explicação simples de termos jurídicos difíceis**
+
+No contexto da pergunta, o termo ""arma falsa"" refere-se a uma arma que não é real ou eficaz para causar danos. No entanto, no Direito Penal brasileiro, a utilização de qualquer objeto que possa ser considerado como arma pode configurar um crime.
+
+**Resposta jurídica objetiva e fundamentada**
+
+Sim, o roubo cometido com a utilização de uma arma de brinquedo é qualificado. Embora a arma seja falsa, a conduta dos assaltantes é considerada mais grave do que se fossem armados com objetos inofensivos. Isso porque a utilização de qualquer objeto que possa ser considerado como arma pode configurar um crime de roubo qualificado (art. 157, § 2º, do Código Penal).
+
+**Fontes citadas**
+
+[Fonte 1 – JTAERGS 32⁄104]","Sim. A jurisprudência pacificou que o emprego de arma de brinquedo ou simulacro configura roubo qualificado (art. 157, §2º, I), pois a vítima acredita na ameaça real. O STJ entende que o que importa é a potencialidade lesiva aparente e a intimidação efetiva. Súmula 174 do STJ: arma desmuniciada também qualifica.",157;Art. 306 do CTB (Lei 9.503/1997),157,,,0.5,1.0,0.6666666666666666,1.0,1.0,1.0,18.294668197631836,5,1
+7,"Pedro furta uma barra de chocolate de R$ 3,00 de um supermercado. Pode ser aplicado o princípio da insignificância?",intfloat/multilingual-e5-small,llama3_8b_q6,llama3:8b-instruct-q6_K,"**Explicação simples de termos jurídicos difíceis**
+
+O princípio da insignificância é uma regra que estabelece que um crime pode ser considerado sem relevância penal se o dano causado for muito pequeno. No entanto, para aplicar esse princípio, é necessário verificar se a conduta do agente é isolada ou se há uma prática habitual de crimes.
+
+**Resposta jurídica objetiva e fundamentada**
+
+No caso apresentado, Pedro furta uma barra de chocolate de R$ 3,00. Embora o valor seja baixo, não há indícios de que essa conduta seja isolada. A jurisprudência brasileira estabelece que a aplicação do princípio da insignificância depende de a conduta ser isolada e não haver prejuízo à sociedade (STF, HC 102.088⁄RS). Além disso, o Supremo Tribunal Federal também estabeleceu que a reiteração de crimes, mesmo se os valores forem baixos, pode levar à aplicação da pena penal (RHC 37453⁄MG).
+
+Portanto, não é possível concluir que o princípio da insignificância seja aplicável nesse caso, pois há indícios de que a conduta de Pedro seja habitual e não isolada.
+
+**Fontes citadas**
+
+[Fonte 1 – STF, HC 102.088⁄RS]
+[Fonte 2 – RHC 37453⁄MG]","Possivelmente sim. O princípio da insignificância exclui a tipicidade material quando há: (1) mínima ofensividade da conduta, (2) ausência de periculosidade social, (3) reduzido grau de reprovabilidade, (4) inexpressividade da lesão. Furto de R$ 3,00, sem violência, de grande empresa, tende a ser considerado insignificante. Mas reincidência ou outras circunstâncias podem afastar o princípio.",155;171,155,,,0.5,1.0,0.6666666666666666,1.0,1.0,1.0,29.06034207344055,5,1
+8,Qual a diferença prática entre homicídio qualificado privilegiado e homicídio simples na dosimetria da pena?,intfloat/multilingual-e5-small,llama3_8b_q6,llama3:8b-instruct-q6_K,"**Explicação simples de termos jurídicos difíceis**
+
+* Homicídio qualificado: é o homicídio que apresenta circunstâncias que agravam a pena, como o emprego de recurso que dificultou ou tornou impossível a defesa do ofendido.
+* Homicídio simples: é o homicídio sem as circunstâncias agravantes mencionadas acima.
+
+**Resposta jurídica objetiva e fundamentada**
+
+A diferença prática entre homicídio qualificado privilegiado e homicídio simples na dosimetria da pena está no fato de que, no homicídio qualificado, as circunstâncias agravantes são consideradas para aumentar a pena-base, enquanto no homicídio simples, a pena-base é aplicada sem aumento. No entanto, se o crime for qualificado e apresentar mais de uma qualificadora, apenas uma delas pode ser considerada para qualificar o tipo penal, pois não há bis in idem (art. 61 do Código Penal).
+
+**Fontes**
+
+[Fonte 1 – Acórdão nº 2012/0184708-0 da Sexta Turma do Superior Tribunal de Justiça do Brasil]","Homicídio simples: reclusão de 6 a 20 anos (art. 121 caput). Privilegiado: redução de 1/6 a 1/3 (§1º - motivo relevante valor moral/social ou domínio de violenta emoção). Qualificado: reclusão de 12 a 30 anos (§2º). Quando há privilégio e qualificadora, prevalece a qualificadora, mas o privilégio reduz a pena. Resultado: pena entre 8 e 20 anos (12 a 30 reduzida de 1/6 a 1/3).",121;129,121,,,0.5,1.0,0.6666666666666666,1.0,1.0,1.0,22.923239946365356,5,1
+9,Um traficante é preso com 50kg de cocaína. Quais são as causas de aumento de pena aplicáveis ao tráfico de drogas?,intfloat/multilingual-e5-small,llama3_8b_q6,llama3:8b-instruct-q6_K,"**Explicação simples de termos jurídicos difíceis**
+
+* ""Causa de aumento"": é uma circunstância que aumenta a pena aplicável a um crime, prevista em lei ou regulamentação.
+* ""Lei 11.343/06"": é a Lei Brasileira de Drogas, que regula o tráfico e uso de drogas no Brasil.
+
+**Resposta jurídica objetiva e fundamentada**
+
+As causas de aumento de pena aplicáveis ao tráfico de drogas, previstas na Lei 11.343/06, são:
+
+* Art. 40, inciso V: quando a quantidade de droga apreendida for superior à dose média para consumo pessoal (art. 33, § 1º).
+* Art. 41, inciso I: quando o agente cometer o crime em concurso material com outro delito.
+* Art. 41, inciso II: quando o agente cometer o crime em concurso formal com outro delito.
+
+No caso específico, a quantidade de cocaína apreendida (50kg) é superior à dose média para consumo pessoal, o que justifica a aplicação da causa de aumento prevista no art. 40, inciso V.
+
+**Fontes citadas**
+
+[Fonte 1 – jurisprudência]","Art. 40 da Lei 11.343/06 prevê aumento de 1/6 a 2/3 se: (I) tráfico transnacional ou interestadual; (II) envolver criança/adolescente; (III) financiado por organização criminosa; (IV) em transporte público, estabelecimento prisional, ensino ou saúde; (V) grande quantidade (caso dos 50kg). Podem ser cumuladas. A quantidade de 50kg certamente enseja aumento pelo inciso V.",155;Lei 11.343/2006 - Art. 33,33,,,0.0,0.0,0.0,1.0,1.0,1.0,26.417044639587402,5,1

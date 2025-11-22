@@ -1,0 +1,3 @@
+embedding,llm,llm_model,n_perguntas,precision_lei_mean,recall_lei_mean,f1_lei_mean,precision_juris_mean,recall_juris_mean,f1_juris_mean,generation_time_mean
+neuralmind/bert-base-portuguese-cased,llama3_3b_q8,llama3:3b-instruct-q8_0,9,0.16666666666666666,0.2222222222222222,0.18518518518518517,1.0,1.0,1.0,0.0013553036583794488
+neuralmind/bert-base-portuguese-cased,llama3_8b_q6,llama3:8b-instruct-q6_K,9,0.16666666666666666,0.2222222222222222,0.18518518518518517,1.0,1.0,1.0,29.378220319747925

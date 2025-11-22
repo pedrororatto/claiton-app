@@ -6,7 +6,7 @@ from typing import List, Dict, Tuple
 from dotenv import load_dotenv
 load_dotenv()
 # CONFIGS
-OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434")
+OLLAMA_URL = os.getenv("OLLAMA_URL")
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL")
 TEMPERATURE = float(os.getenv("OLLAMA_TEMPERATURE"))
 NUM_CTX = int(os.getenv("OLLAMA_NUM_CTX"))
@@ -161,7 +161,17 @@ def answer(question: str):
         print("Nenhuma fonte utilizada (sem contexto).")
 
 
-def answer_question(question: str) -> Tuple[str, List[Dict]]:
+def answer_question(question: str, max_response_length: int = None) -> Tuple[str, List[Dict]]:
+    """
+    Responde uma pergunta usando RAG.
+    
+    Args:
+        question: Pergunta do usuário
+        max_response_length: Limite opcional de caracteres para a resposta (útil para WhatsApp)
+    
+    Returns:
+        Tupla (resposta, lista_de_fontes)
+    """
     try:
         # Retrieve
         retrieved = dual_retrieve(question, k_juris=K_JURIS, k_lei=K_LEI)
@@ -176,6 +186,21 @@ def answer_question(question: str) -> Tuple[str, List[Dict]]:
             contexts=contexts_str if contexts_str else "(nenhum contexto recuperado)"
         )
         response = call_ollama(prompt)
+
+        # Truncar resposta se max_response_length foi especificado
+        if max_response_length and len(response) > max_response_length:
+            # Tentar truncar em uma frase completa
+            resposta_truncada = response[:max_response_length - 50]
+            ultimo_ponto = resposta_truncada.rfind('.')
+            ultima_quebralinha = resposta_truncada.rfind('\n')
+            ponto_corte = max(ultimo_ponto, ultima_quebralinha)
+            
+            if ponto_corte > max_response_length * 0.7:  # Se encontrou um ponto razoavelmente próximo
+                response = resposta_truncada[:ponto_corte + 1]
+            else:
+                response = resposta_truncada
+            
+            response += "\n\n⚠️ *Mensagem truncada devido ao limite de caracteres.*"
 
         fontes = []
         for ch in used:
